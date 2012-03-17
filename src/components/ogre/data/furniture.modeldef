@@ -1,0 +1,78 @@
+<models>
+    <model name="chair" usescaleof="all" showcontained="true">
+        <translate x="0.000000" y="0.000000" z="0.000000" />
+        <rotation x="1.000000" y="1.000000" z="1.000000" degrees="0.000000" />
+        <submodels>
+            <submodel mesh="3d_objects/items/furniture/models/chair/chair.mesh">
+                <parts>
+                    <part name="main" show="true">
+                    </part>
+                </parts>
+            </submodel>
+        </submodels>
+        <actions />
+    </model>
+    <model name="longtable" usescaleof="all" showcontained="true">
+        <translate x="0.000000" y="0.000000" z="0.000000" />
+        <rotation x="1.000000" y="1.000000" z="1.000000" degrees="0.000000" />
+        <submodels>
+            <submodel mesh="3d_objects/items/furniture/models/longtable/longtable.mesh">
+                <parts>
+                    <part name="main" show="true">
+                    </part>
+                </parts>
+            </submodel>
+        </submodels>
+        <actions />
+    </model>
+    <model name="shelf_table" usescaleof="all" showcontained="true">
+        <translate x="0.000000" y="0.000000" z="0.000000" />
+        <rotation x="1.000000" y="1.000000" z="1.000000" degrees="0.000000" />
+        <submodels>
+            <submodel mesh="3d_objects/items/furniture/models/shelf_table/shelf_table.mesh">
+                <parts>
+                    <part name="main" show="true">
+                    </part>
+                </parts>
+            </submodel>
+        </submodels>
+        <actions />
+    </model>
+    <model name="simple_shelf" usescaleof="all" showcontained="true">
+        <translate x="0.000000" y="0.000000" z="0.000000" />
+        <rotation x="1.000000" y="1.000000" z="1.000000" degrees="0.000000" />
+        <submodels>
+            <submodel mesh="3d_objects/items/furniture/models/shelf/simple_shelf.mesh">
+                <parts>
+                    <part name="main" show="true">
+                    </part>
+                </parts>
+            </submodel>
+        </submodels>
+        <actions />
+    </model>
+    <model name="stool" usescaleof="all" showcontained="true">
+        <translate x="0.000000" y="0.000000" z="0.000000" />
+        <rotation x="1.000000" y="1.000000" z="1.000000" degrees="0.000000" />
+        <submodels>
+            <submodel mesh="3d_objects/items/furniture/models/stool/stool.mesh">
+                <parts>
+                    <part name="main" show="true">
+                    </part>
+                </parts>
+            </submodel>
+        </submodels>
+        <actions />
+    </model>
+	<model name="simple_table" usescaleof="height"  >
+		<submodels>
+			<submodel mesh="3d_objects/items/furniture/models/simple_table/simple_table.mesh" >
+				<parts>
+                    <part name="main" show="true">
+                    </part>
+				</parts>
+			</submodel>
+		</submodels>
+	</model>		
+</models>
+ 

@@ -1,0 +1,6 @@
+namespace Ember {
+	class LoggingService
+	{
+	};
+}
+

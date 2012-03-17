@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GUILayout>
+	<Window Type='EmberLook/FrameWindow' Name='BasePointEditor'>
+		<Property Name='TitlebarEnabled' Value='True'/>
+		<Property Name='UnifiedPosition' Value='{{1,-200},{0,0}}'/>
+		<Property Name='UnifiedSize' Value='{{0,200},{0,200}}'/>
+		<Property Name='Visible' Value='false'/>
+		<Window Type='DefaultWindow' Name='MainInnerWindow'>
+			<Property Name='UnifiedPosition' Value='{{0.0,2},{0,0}}'/>
+			<Property Name='UnifiedSize' Value='{{1,-4},{1,0}}'/>
+			<Property Name='InheritsAlpha' Value='True'/>
+			<Window Type='EmberLook/StaticText' Name='SelectedBasePointInfo'>
+				<Property Name='Text' Value='Selected basepoint:'/>
+				<Property Name='UnifiedPosition' Value='{{0,5},{0,5}}'/>
+				<Property Name='UnifiedSize' Value='{{0,200},{0,25}}'/>
+				<Property Name='UnifiedMaxSize' Value='{{1.0,0.0},{1.0,0.0}}'/>
+				<Property Name='BackgroundEnabled' Value='False'/>
+				<Property Name='FrameEnabled' Value='False'/>
+			</Window>
+			<Window Type='EmberLook/StaticText' Name='HeightText'>
+				<Property Name='Text' Value='Height:'/>
+				<Property Name='UnifiedPosition' Value='{{0,5},{0,35}}'/>
+				<Property Name='UnifiedSize' Value='{{0,50},{0,25}}'/>
+				<Property Name='BackgroundEnabled' Value='False'/>
+				<Property Name='FrameEnabled' Value='False'/>
+			</Window>
+			<Window Type='EmberLook/Editbox' Name='Height'>
+				<Property Name='UnifiedPosition' Value='{{0,55},{0,35}}'/>
+				<Property Name='UnifiedSize' Value='{{0,50},{0,25}}'/>
+				<Property Name='UnifiedMaxSize' Value='{{1.0,0.0},{1.0,0.0}}'/>
+			</Window>
+			<Window Type='EmberLook/Button' Name='RedoButton'>
+				<Property Name='Text' Value='Redo'/>
+				<Property Name='UnifiedPosition' Value='{{0,5},{0,65}}'/>
+				<Property Name='UnifiedSize' Value='{{0,50},{0,25}}'/>
+			</Window>
+			<Window Type='EmberLook/Button' Name='UndoButton'>
+				<Property Name='Text' Value='Undo'/>
+				<Property Name='UnifiedPosition' Value='{{0,60},{0,65}}'/>
+				<Property Name='UnifiedSize' Value='{{0,50},{0,25}}'/>
+			</Window>
+			<Window Type='EmberLook/Button' Name='SendToServerButton'>
+				<Property Name='Text' Value='Send to server'/>
+				<Property Name='UnifiedPosition' Value='{{0,5},{0,95}}'/>
+				<Property Name='UnifiedSize' Value='{{0,100},{0,25}}'/>
+			</Window>
+			<Window Type='EmberLook/Button' Name='ShowOverlayButton'>
+				<Property Name='Text' Value='Show overlay'/>
+				<Property Name='UnifiedPosition' Value='{{0,5},{0,125}}'/>
+				<Property Name='UnifiedSize' Value='{{0,100},{0,25}}'/>
+			</Window>
+			<Window Type='EmberLook/Slider' Name='Radius'>
+				<Property Name='UnifiedSize' Value='{{1.00,-20.0},{0.0,15.0}}'/>
+				<Property Name='UnifiedPosition' Value='{{0.0,10.0},{0.0,160.0}}'/>
+				<Property Name='Tooltip' Value='Sets the radius of the selection.'/>
+			</Window>
+		</Window>
+	</Window>
+</GUILayout>

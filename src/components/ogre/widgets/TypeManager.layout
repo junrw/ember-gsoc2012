@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GUILayout>
+	<Window Type='EmberLook/FrameWindow' Name='MainWindow'>
+		<Property Name='UnifiedSize' Value='{{0.7,0},{0.6,0}}'/>
+		<Property Name='UnifiedPosition' Value='{{0,0},{0.4,0}}'/>
+		<Property Name='Alpha' Value='0.6'/>
+		<Property Name='Text' Value='Type manager'/>
+		<Property Name='Visible' Value='false'/>
+		<Window Type='DefaultWindow' Name='MainInnerWindow'>
+			<Property Name='UnifiedSize' Value='{{1,-6},{1,0}}'/>
+			<Property Name='UnifiedPosition' Value='{{0,3},{0.00,0}}'/>
+			<Property Name='InheritsAlpha' Value='True'/>
+			<Window Type='EmberLook/Tree' Name='TypeList'>
+				<Property Name='UnifiedSize' Value='{{0,200},{1.00,-10}}'/>
+				<Property Name='InheritsAlpha' Value='false'/>
+			</Window>
+			<Window Type='EmberLook/MultiLineEditbox' Name='TypeInfoText'>
+				<Property Name='UnifiedPosition' Value='{{0,210},{0,0}}'/>
+				<Property Name='UnifiedSize' Value='{{1,-210},{1,-40}}'/>
+			</Window>
+			<Window Type='EmberLook/Combobox' Name='CodecType'>
+				<Property Name='UnifiedSize' Value='{{0,100},{0,100}}'/>
+				<Property Name='UnifiedPosition' Value='{{1,-210},{1,-30}}'/>
+				<Property Name='ReadOnly' Value='true'/>
+				<Property Name='ClippedByParent' Value='false' />
+			</Window>			
+			<Window Type='EmberLook/Button' Name='SendToServerButton'>
+				<Property Name='Text' Value='Send to server'/>
+				<Property Name='UnifiedPosition' Value='{{1,-105},{1,-25}}'/>
+				<Property Name='UnifiedSize' Value='{{0,100},{0,20}}'/>
+			</Window>
+		</Window>
+	</Window>
+</GUILayout>

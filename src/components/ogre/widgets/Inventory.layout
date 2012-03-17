@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GUILayout>
+	<Window Type='EmberLook/InventoryFrameWindow' Name='MainWindow'>
+		<Property Name='UnifiedSize' Value='{{0.00,300.0},{0.00,300.0}}'/>
+		<Property Name='UnifiedPosition' Value='{{1.00,-300.0},{1.00,-300.0}}'/>
+		<Property Name='Text' Value='Inventory'/>
+		<Window Type='DefaultWindow' Name='MainInnerWindow'>
+			<Property Name='UnifiedPosition' Value='{{0.0,2},{0,0}}'/>
+			<Property Name='UnifiedSize' Value='{{1,-4},{1,0}}'/>
+			<Property Name='InheritsAlpha' Value='True'/>
+			<Window Type='EmberLook/ScrollablePane' Name='IconContainer'>
+				<Property Name='UnifiedSize' Value='{{0,128},{1.0,0}}'/>
+				<Property Name='Text' Value=''/>
+				<Property Name='InheritsAlpha' Value='True'/>
+			</Window>
+			<Window Type='EmberLook/StaticImage' Name='DollImage'>
+				<Property Name='UnifiedPosition' Value='{{0.0,128},{0,0}}'/>
+				<Property Name='UnifiedSize' Value='{{1,-128},{1.0,0}}'/>
+				<Property Name='InheritsAlpha' Value='True'/>
+				<Window Type='EmberLook/StaticImage' Name='Doll/RightHand'>
+					<Property Name='UnifiedPosition' Value='{{0.10,0},{0.45,0}}'/>
+					<Property Name='UnifiedSize' Value='{{0,32},{0,32}}'/>
+					<Property Name='BackgroundEnabled' Value='false'/>
+				</Window>
+				<Window Type='EmberLook/StaticImage' Name='Doll/Head'>
+					<Property Name='UnifiedPosition' Value='{{0.5,-16},{0.1,0}}'/>
+					<Property Name='UnifiedSize' Value='{{0,32},{0,32}}'/>
+					<Property Name='BackgroundEnabled' Value='true'/>
+				</Window>
+				<Window Type='EmberLook/StaticImage' Name='Doll/Back'>
+					<Property Name='UnifiedPosition' Value='{{0.5,16},{0.2,0}}'/>
+					<Property Name='UnifiedSize' Value='{{0,32},{0,32}}'/>
+					<Property Name='BackgroundEnabled' Value='true'/>
+				</Window>
+				<Window Type='EmberLook/StaticImage' Name='Doll/Torso'>
+					<Property Name='UnifiedPosition' Value='{{0.5,-16},{0.3,0}}'/>
+					<Property Name='UnifiedSize' Value='{{0,32},{0,32}}'/>
+					<Property Name='BackgroundEnabled' Value='true'/>
+				</Window>
+				<Window Type='EmberLook/StaticImage' Name='Doll/Legs'>
+					<Property Name='UnifiedPosition' Value='{{0.5,-16},{0.6,0}}'/>
+					<Property Name='UnifiedSize' Value='{{0,32},{0,32}}'/>
+					<Property Name='BackgroundEnabled' Value='true'/>
+				</Window>
+				<Window Type='EmberLook/StaticImage' Name='Doll/Feet'>
+					<Property Name='UnifiedPosition' Value='{{0.5,-16},{0.8,0}}'/>
+					<Property Name='UnifiedSize' Value='{{0,32},{0,32}}'/>
+					<Property Name='BackgroundEnabled' Value='false'/>
+				</Window>
+			</Window>
+		</Window>
+	</Window>
+</GUILayout>

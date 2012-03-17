@@ -1,0 +1,36 @@
+#!/bin/bash
+
+bindir="$( cd -P "$( dirname "$0" )" && pwd )"
+prefix="$( cd -P "$( dirname "$0" )/.." && pwd )"
+export LD_LIBRARY_PATH=$prefix/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+
+
+homedata="$HOME/.ember"
+
+debugging=0
+
+echo "According to my calculations Ember should be installed in $prefix"
+
+case "$1" in
+--home)
+  shift
+  homedata="$@"
+  ;;
+--debug)
+  shift
+  debugging=1
+  ;;
+esac
+
+cd $bindir
+
+if [ $debugging == 1 ] ; then
+  # Execute real ember binary
+  echo "Starting Ember in debugger...."
+  gdb --batch -ex "run" -ex "backtrace" -ex "quit" \
+  --args $bindir/ember.bin --prefix $prefix --home $homedata "$@"
+else
+  # Execute real ember binary
+  echo "Starting Ember...."
+  $bindir/ember.bin --prefix $prefix --home $homedata "$@"
+fi

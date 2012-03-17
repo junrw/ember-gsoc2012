@@ -1,0 +1,98 @@
+namespace Ember {
+namespace OgreView {
+namespace Model {
+class Model
+{
+//	typedef std::map<std::string, Action> ActionStore;
+
+//	typedef std::set<Ember::OgreView::SubModel*> SubModelSet;
+//	typedef std::set<std::string> StringSet;
+//	typedef std::map<std::string, StringSet > SubModelPartMapping;
+//	typedef std::map<std::string, SubModelPart*> SubModelPartMap;
+
+
+	static Model* createModel(Ogre::SceneManager& sceneManager, const std::string& modelType, const std::string& name = "");
+	
+	/**
+	 *    Reloads the model from the modeldefinition.
+	 */
+	void reload();
+	
+	virtual ~Model();
+
+	bool addSubmodel(Ember::OgreView::Model::SubModel* submodel);
+ 	bool removeSubmodel(Ember::OgreView::Model::SubModel* submodel);
+ 	
+	Ember::OgreView::Model::Action* getAction(const std::string& name);	
+	
+
+	/**
+	 * hides and shows a certain part of the model
+	 */
+	void showPart(const std::string& partName);
+	void hidePart(const std::string& partName);
+	void setVisible(bool visible);
+	
+	/**
+	 * if defined in the modeldef, returns a scaler by which the node containing 
+	 * the model can be scaled
+	 */
+	const Ogre::Real getScale() const;
+
+	/**
+	 * if defined in the modeldef, returns an amount of degrees by which the node containing 
+	 * the model can be rotated
+	 */
+	const Ogre::Quaternion& getRotation() const;
+	
+	/**
+	 * if defined in the modeldef, returns an axis by which the model can be scaled
+	 * I.e. when dealing with something such as a fir tree, you want to use the
+	 * height of the tree to determine how much it should be scaled, since the 
+	 * bounding box supplied by eris doesn't take the branches into account
+	 */
+	const Ember::OgreView::Model::ModelDefinition::UseScaleOf getUseScaleOf() const;
+	
+
+        /** Overridden from MovableObject */
+        virtual const std::string& getName(void) const;
+
+        /** Overridden from MovableObject */
+		
+	/**
+	 *    returns a pointer to the defintion of the Model
+	 * @return 
+	 */
+	Ember::OgreView::Model::ModelDefnPtr getDefinition() const;
+	
+	
+	bool hasAttachPoint(const std::string& attachPoint) const; 
+
+//	const ParticleSystemBindingsPtrSet& getAllParticleSystemBindings() const;
+
+//	ParticleSystemSet& getParticleSystems();
+	
+	bool hasParticles() const;
+
+	//Ember::OgreView::Model::SubModel* getSubModel(const std::string& name);
+	Ember::OgreView::Model::SubModel* getSubModel(unsigned int index);
+	//std::set<Ember::OgreView::Model::SubModel*> getSubmodels() const;
+//	std::map<std::string, Ember::OgreView::Model::SubModelPart*> getSubmodelParts() const;
+
+	/**
+	 *    If set to true, Ogre will display each bone in the skeleton with an axis overlay. Defaults to false.
+	 * @param display Whether to display the debug bone overlay or not.
+	 */
+	void setDisplaySkeleton(bool display);
+
+	/**
+	 *    Whether the debug bone overlay for the skeleton is shown or not.
+	 * @param  
+	 * @return 
+	 */
+	bool getDisplaySkeleton(void) const;
+};
+
+}
+}
+}

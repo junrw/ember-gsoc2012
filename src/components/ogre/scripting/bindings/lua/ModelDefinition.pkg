@@ -1,0 +1,206 @@
+namespace Ember {
+namespace OgreView {
+namespace Model {
+
+typedef std::vector<Ember::OgreView::Model::SubModelDefinition*> SubModelDefinitionsStore;
+typedef std::vector<Ember::OgreView::Model::PartDefinition*> PartDefinitionsStore;
+typedef std::vector<Ember::OgreView::Model::SubEntityDefinition*> SubEntityDefinitionsStore;
+typedef std::vector<Ember::OgreView::Model::AttachPointDefinition> AttachPointDefinitionStore;
+typedef std::map<std::string, Ember::OgreView::Model::ViewDefinition*> ViewDefinitionStore;
+
+
+/**
+A simple struct for defining a certain view of the Model. These settings needs to be applied to the camera rendering the Model.
+*/
+struct ViewDefinition
+{
+	/**
+	The name of the view.
+	*/
+	std::string Name;
+	
+	/**
+	The rotation of the camera related to the Model.
+	*/
+	Ogre::Quaternion Rotation;
+	
+	/**
+	The distance of the camera from the Model.
+	*/
+	float Distance;
+};
+
+struct AttachPointDefinition
+{
+	std::string Name;
+	std::string BoneName;
+	Ogre::Quaternion Rotation;
+};
+
+
+class SubEntityDefinition
+{
+	 std::string& getSubEntityName() ;
+	//void setSubEntityName( std::string&);
+	unsigned int getSubEntityIndex() ;
+
+	 std::string& getMaterialName() ;
+	void setMaterialName( std::string& materialName);
+	Ember::OgreView::Model::PartDefinition& getPartDefinition();
+
+};	
+
+
+class PartDefinition
+{
+	void setName( std::string& name);
+	 std::string& getName() ;
+	
+	void setShow(bool show);
+	bool getShow() ;
+	
+	Ember::OgreView::Model::SubEntityDefinition* createSubEntityDefinition( std::string& subEntityName);
+	Ember::OgreView::Model::SubEntityDefinition* createSubEntityDefinition(unsigned int subEntityIndex);
+	std::vector<Ember::OgreView::Model::SubEntityDefinition*> getSubEntityDefinitions();
+	void removeSubEntityDefinition(Ember::OgreView::Model::SubEntityDefinition* def);
+	Ember::OgreView::Model::SubModelDefinition& getSubModelDefinition();
+	
+};
+
+
+class SubModelDefinition
+{
+	
+	 std::string& getMeshName() ;
+	
+	Ember::OgreView::Model::PartDefinition* createPartDefinition( std::string& partname);
+	std::vector<Ember::OgreView::Model::PartDefinition*> getPartDefinitions();
+	void removePartDefinition(Ember::OgreView::Model::PartDefinition* def);
+	Ember::OgreView::Model::ModelDefinition& getModelDefinition();
+};
+
+
+class ModelDefinition : public Ogre::Resource {
+
+	/**
+	whether to use a certain axis for scaling
+	for example, if you use a model of a human you probably want to scale according to the height
+	this might mean that width and depths aren't correct though
+	*/
+	enum UseScaleOf {
+		MODEL_ALL = 0,
+		MODEL_NONE = 1,
+		MODEL_WIDTH = 2,
+		MODEL_DEPTH = 3,
+		MODEL_HEIGHT = 4
+	};
+
+	/**
+	A struct for simple bindings between areas and materials/textures.
+	*/
+//	struct AreaDefinition
+//	{
+//		int Id;
+//		std::string TextureName;
+//		std::string MaterialName;
+//	};
+	
+ 
+    bool isValid(void);
+	void setValid(bool valid);
+
+	
+	/**
+	 *    Gets the amount of scale that needs to be applied to derived Models.
+	 * @return 
+	 */
+	inline float getScale();
+	inline void setScale(float scale);
+	
+	/**
+	 *    Gets how derived Models needs to be scaled.
+	 Defaults to "ALL"
+	 * @return 
+	 */
+	inline  Ember::OgreView::Model::ModelDefinition::UseScaleOf getUseScaleOf();
+	inline void setUseScaleOf( Ember::OgreView::Model::ModelDefinition::UseScaleOf useScale);
+	
+	/**
+	 *    Gets an optional translation vector which should be applied to derived Models.
+	 * @return 
+	 */
+	 Ogre::Vector3& getTranslate();
+	void setTranslate(const Ogre::Vector3 translate);
+	
+	/**
+	 *	Whether contained entities should be shown or not.
+	 Defaults to true.
+	 * @return true if contained entities should be shown, else false
+	 */
+	bool getShowContained() const;
+	void setShowContained(bool show);
+	
+	/**
+	 *    Returns a vector defining how much, if ever, contained entities should be offset.
+	 *    If they shouldn't, Ogre::Vector3::ZERO will be returned.
+	 * @return A offset vectorl.
+	 */
+	const Ogre::Vector3& getContentOffset() const;
+	void setContentOffset(const Ogre::Vector3&);
+	
+	/**
+	 *    Accessor for the rotation around the Z-axis that should be applied to the model upon creation
+	 NOTE: this should probably be replaced with a Quaternion
+	 * @return 
+	 */
+	const Ogre::Quaternion& getRotation() const;
+	void setRotation(const Ogre::Quaternion rotation);
+	
+	Ember::OgreView::Model::SubModelDefinition* createSubModelDefinition(std::string& meshname);
+	std::vector<Ember::OgreView::Model::SubModelDefinition*>& getSubModelDefinitions();
+	void removeSubModelDefinition(Ember::OgreView::Model::SubModelDefinition* def);
+	
+	Ember::OgreView::Model::ActionDefinition* createActionDefinition(std::string& actionname);
+	std::vector<Ember::OgreView::Model::ActionDefinition*>& getActionDefinitions();
+	void removeActionDefinition(Ember::OgreView::Model::ActionDefinition* def);
+	
+	const std::vector<Ember::OgreView::Model::AttachPointDefinition>& getAttachPointsDefinitions();
+
+	/**
+	Creates and returns a new ViewDefinition with the supplied name.
+	@param viewname The name of the view
+	@return A pointer to the new view.
+	*/
+	ViewDefinition* createViewDefinition(const std::string& viewname);
+	
+	/**
+	 * Returns all views defined.
+	 * @return 
+	 */
+	const ViewDefinitionStore& getViewDefinitions();
+	
+	/**
+	 * Removed a named view. If no view can be found, no exception will be thrown.
+	 * @param name The name of the view to to remove.
+	 */
+	void removeViewDefinition(const std::string name);
+	
+	/**
+	 *    Reloads all the Model instances that uses this definition.
+	 */
+	void reloadAllInstances();
+
+	
+};
+
+class ModelDefnPtr
+{
+	virtual ~ModelDefnPtr();
+	Ember::OgreView::Model::ModelDefinition* get();
+};
+
+typedef Ember::OgreView::Model::ModelDefnPtr ModelDefinitionPtr;
+
+}
+}
+}

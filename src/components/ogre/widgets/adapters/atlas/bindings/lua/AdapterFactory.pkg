@@ -1,0 +1,109 @@
+//
+// C++ Interface: AdapterFactory
+//
+// Description: 
+//
+//
+// Author: Erik Hjortsberg <erik.hjortsberg@gmail.com>, (C) 2007
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program; if not, write to the Free Software
+// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.//
+//
+$#include "../../AdapterFactory.h"
+
+namespace Ember {
+namespace OgreView {
+
+class EmberEntity;
+
+namespace Gui {
+
+namespace Adapters {
+
+namespace Atlas {
+
+/**
+	@author Erik Hjortsberg <erik.hjortsberg@gmail.com>
+*/
+class AdapterFactory{
+public:
+    AdapterFactory(const std::string prefix);
+
+    ~AdapterFactory();
+    
+    StringAdapter* createStringAdapter(CEGUI::Window* container, const std::string& adapterPrefix, const Atlas::Message::Element& element);
+    NumberAdapter* createNumberAdapter(CEGUI::Window* container, const std::string& adapterPrefix, const Atlas::Message::Element& element);
+    SizeAdapter* createSizeAdapter(CEGUI::Window* container, const std::string& adapterPrefix, const Atlas::Message::Element& element);
+	PositionAdapter* createPositionAdapter(CEGUI::Window* container, const std::string& adapterPrefix, const Atlas::Message::Element& element);
+	Position2DAdapter* createPosition2DAdapter(CEGUI::Window* container, const std::string& adapterPrefix, const Atlas::Message::Element& element);
+    MapAdapter* createMapAdapter(CEGUI::Window* container, const std::string& adapterPrefix, const Atlas::Message::Element& element);
+    MapAdapter* createMapAdapter(CEGUI::Window* container, const std::string& adapterPrefix, const Atlas::Message::MapType attributes);
+	MapAdapter* createMapAdapter(CEGUI::Window* container, const std::string& adapterPrefix, Eris::Entity* entity);
+	ListAdapter* createListAdapter(CEGUI::Window* container, const std::string& adapterPrefix, const Atlas::Message::Element& element);
+    OrientationAdapter* createOrientationAdapter(CEGUI::Window* container, const std::string& adapterPrefix, const Atlas::Message::Element& element);
+    StaticAdapter* createStaticAdapter(CEGUI::Window* container, const std::string& adapterPrefix, const Atlas::Message::Element& element);
+	/**
+	* @brief Creates and adapter for a terrain area.
+	* @param container The container window into which the adapter's windows will be loaded.
+	* @param adapterPrefix A unique prefix for the adapter.
+	* @param element The element to which the adapter is bound.
+	* @param entity The entity to which the terrain area is bound. This can be a null pointer.
+	* @return A new terrain area adapter.
+	*/
+	AreaAdapter* createAreaAdapter(CEGUI::Window* container, const std::string& adapterPrefix, const Atlas::Message::Element& element, EmberEntity* entity);
+
+	/**
+	* @brief Creates and adapter for a polygon.
+	* @param container The container window into which the adapter's windows will be loaded.
+	* @param adapterPrefix A unique prefix for the adapter.
+	* @param element The element to which the adapter is bound.
+	* @param entity The entity to which the terrain area is bound. This can be a null pointer.
+	* @return A new polygon adapter.
+	*/
+	PolygonAdapter* createPolygonAdapter(CEGUI::Window* container, const std::string& adapterPrefix, const Atlas::Message::Element& element, EmberEntity* entity);
+
+	/**
+	* @brief Creates an adapter for a terrain mod.
+	* @param container The container window into which the adapter's windows will be loaded.
+	* @param adapterPrefix A unique prefix for the adapter.
+	* @param element The element to which the adapter is bound.
+	* @param entity The entity to which the terrain area is bound. This can be a null pointer.
+	* @return A new polygon adapter.
+	*/
+	TerrainModAdapter* createTerrainModAdapter(CEGUI::Window* container, const std::string& adapterPrefix, const Atlas::Message::Element& element, EmberEntity* entity);
+	
+	/**
+	 * @brief Creates a new adapter based on a specified type.
+	 * @param type The type for which an adapter should be created. Possible values are "string|number|size|position|position2d|map|list|orientation|static".
+	 * @param container The container window into which the adapter's windows will be loaded.
+	 * @param adapterPrefix A unique prefix for the adapter.
+	 * @param element The element to which the adapter is bound.
+	 * @param entity An optional entity to which the adapter is connected. This isn't always needed (since an entity instance is not always available)
+	 * @return A new adapter instance, or null if there either was an error when creating one, or none could be found for the specified type.
+	 */
+	AdapterBase* createAdapterByType(std::string type, CEGUI::Window* container, const std::string& adapterPrefix, const Atlas::Message::Element& element, Ember::OgreView::EmberEntity* entity = 0);
+	
+	CEGUI::Window* loadLayoutIntoContainer(CEGUI::Window* container, const std::string& adapterPrefix, const std::string& layoutfile);
+
+	inline const std::string& getCurrentPrefix() const;
+
+};
+
+}
+
+}
+
+}
+}
+}

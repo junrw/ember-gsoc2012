@@ -1,0 +1,199 @@
+$#include "required.h"
+
+//$pfile "Carpenter.pkg"
+
+
+$pfile "MainCamera.pkg"
+$pfile "Screen.pkg"
+$pfile "MovementController.pkg"
+$pfile "Avatar.pkg"
+$pfile "EmberEntityFactory.pkg"
+
+$pfile "EmberEntity.pkg"
+
+$pfile "IGraphicalRepresentation.pkg"
+
+$pfile "Environment.pkg"
+
+
+$pfile "GUIManager.pkg"
+//$pfile "MousePicker.pkg"
+$pfile "TerrainManager.pkg"
+$pfile "TerrainHandler.pkg"
+$pfile "ISceneManagerAdapter.pkg"
+$pfile "TerrainArea.pkg"
+$pfile "TerrainEditor.pkg"
+$pfile "MotionManager.pkg"
+
+$pfile "Widget.pkg"
+$pfile "IconBase.pkg"
+$pfile "IconBar.pkg"
+$pfile "EntityEditor.pkg"
+$pfile "StackableContainer.pkg"
+$pfile "ConsoleAdapter.pkg"
+$pfile "ColouredListItem.pkg"
+$pfile "AssetsManager.pkg"
+$pfile "AtlasHelper.pkg"
+$pfile "Compass.pkg"
+$pfile "EntityCreatorTypeHelper.pkg"
+$pfile "ModelEditHelper.pkg"
+
+$pfile "TypeTreeAdapter.pkg"
+$pfile "ResourceListAdapter.pkg"
+
+$pfile "Icon.pkg"
+$pfile "IconManager.pkg"
+
+$pfile "EntityIconSlot.pkg"
+$pfile "EntityIcon.pkg"
+$pfile "EntityIconManager.pkg"
+$pfile "EntityIconDragDropTarget.pkg"
+$pfile "EntityIconDragDropPreview.pkg"
+
+$pfile "QuickHelpCursor.pkg"
+$pfile "ActionBar.pkg"
+$pfile "EntityTooltip.pkg"
+
+$pfile "ActionBarIconSlot.pkg"
+$pfile "ActionBarIcon.pkg"
+$pfile "ActionBarIconManager.pkg"
+$pfile "ActionBarIconDragDropTarget.pkg"
+
+$pfile "Model.pkg"
+$pfile "ModelRepresentation.pkg"
+$pfile "ModelRepresentationManager.pkg"
+$pfile "SubModel.pkg"
+$pfile "ModelDefinition.pkg"
+//$pfile "Jesus.pkg"
+
+$pfile "Convert.pkg"
+
+
+$pfile "SimpleRenderContext.pkg"
+$pfile "MovableObjectRenderer.pkg"
+$pfile "OgreEntityRenderer.pkg"
+$pfile "ModelRenderer.pkg"
+$pfile "ListHolder.pkg"
+//$pfile "MaterialPicker.pkg"
+
+$pfile "IWorldPickListener.pkg"
+$pfile "EntityWorldPickListener.pkg"
+
+$pfile "ModelDefinitionManager.pkg"
+$pfile "ModelDefinitionAtlasComposer.pkg"
+
+$pfile "EntityMoveManager.pkg"
+
+$pfile "GUIAdapter.pkg"
+$pfile "EntityRecipe.pkg"
+$pfile "EntityRecipeManager.pkg"
+$pfile "EntityCreator.pkg"
+$pfile "AuthoringManager.pkg"
+$pfile "RawTypeInfoRepository.pkg"
+$pfile "AtlasObjectDecoder.pkg"
+
+
+$pfile "stdlib.pkg"
+
+
+$pfile "Vector3Adapter.pkg"
+$pfile "QuaternionAdapter.pkg"
+
+$pfile "Map.pkg"
+
+
+$pfile "OgreInfo.pkg"
+
+$pfile "TerrainLayerDefinition.pkg"
+$pfile "TerrainLayerDefinitionManager.pkg"
+
+//$pfile "EntityCEGUITexture.pkg"
+
+//$pfile "LuaConnector.pkg"
+$pfile "World.pkg"
+$pfile "Scene.pkg"
+
+namespace Ember {
+namespace OgreView {
+class EmberOgre 
+{
+	static EmberOgre& getSingleton( void );
+
+	Ember::OgreView::World* getWorld() const;
+
+	Ember::OgreView::Screen& getScreen() const;
+	
+	Ogre::RenderWindow* getRenderWindow() const;
+	
+	sigc::signal<void, Ember::OgreView::EmberEntityFactory&> EventCreatedEmberEntityFactory;
+	sigc::signal<void, Ember::OgreView::EmberEntity&> EventCreatedAvatarEntity;
+		
+	sigc::signal<void, Ember::OgreView::GUIManager&> EventGUIManagerCreated;
+	sigc::signal<void, Ember::OgreView::GUIManager&> EventGUIManagerInitialized;
+
+	/**
+	 * @brief Emitted before the GUIManager is destroyed.
+	 */
+	sigc::signal<void> EventGUIManagerBeingDestroyed;
+
+	/**
+	 * @brief Emitted after the GUIManager has been destroyed.
+	 */
+	sigc::signal<void> EventGUIManagerDestroyed;
+	
+
+	/**
+	 * @brief Emitted before the Ogre system is destroyed.
+	 */
+	sigc::signal<void> EventOgreBeingDestroyed;
+
+	/**
+	 * @brief Emitted after the Ogre system has been destroyed.
+	 */
+	sigc::signal<void> EventOgreDestroyed;
+		
+	sigc::signal<void, Ember::OgreView::MotionManager&> EventMotionManagerCreated;
+	
+	
+	sigc::signal<void, Ember::OgreView::Terrain::TerrainManager&> EventTerrainManagerCreated;
+
+	/**
+	 * @brief Emitted right before the TerrainManager is destroyed.
+	 */
+	sigc::signal<void> EventTerrainManagerBeingDestroyed;
+
+	/**
+	 * @brief Emitted after the TerrainManager has been destroyed.
+	 */
+	sigc::signal<void> EventTerrainManagerDestroyed;
+		
+	/**
+	 * @brief Emitted after the MotionManager has been destroyed.
+	 */
+	sigc::signal<void> EventMotionManagerDestroyed;
+	
+	sigc::signal<void> EventMovementControllerCreated;
+	
+	/**
+	 * @brief Emitted after the MovementController has been destroyed.
+	 */
+	sigc::signal<void> EventMovementControllerDestroyed;
+
+	
+	/**
+	 * @brief Emitted after a World instance has been created.
+	 */
+	sigc::signal<void, Ember::OgreView::World&> EventWorldCreated;
+
+	/**
+	 * @brief Emitted before a World instance has been destroyed.
+	 */
+	sigc::signal<void> EventWorldBeingDestroyed;
+
+	/**
+	 * @brief Emitted after a World instance has been destroyed.
+	 */
+	sigc::signal<void> EventWorldDestroyed;
+};
+}
+}

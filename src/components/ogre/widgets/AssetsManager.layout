@@ -1,0 +1,313 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GUILayout>
+	<Window Type='EmberLook/FrameWindow' Name='Mainwindow'>
+		<Property Name='UnifiedSize' Value='{{1,-20.0},{1,-80.0}}'/>
+		<Property Name='UnifiedPosition' Value='{{0,10},{0,10}}'/>
+		<Property Name='Alpha' Value='0.6'/>
+		<Property Name='Text' Value='Assets manager'/>
+		<Property Name='Visible' Value='false'/>
+		<Window Type='DefaultWindow' Name='MainInnerWindow'>
+			<Property Name='UnifiedPosition' Value='{{0.0,4},{0,0}}'/>
+			<Property Name='UnifiedSize' Value='{{1,-8},{1,0}}'/>
+			<Property Name='InheritsAlpha' Value='True'/>
+			<Window Type='EmberLook/TabControl' Name='MainTabControl'>
+				<Property Name='UnifiedSize' Value='{{1.0,-8.0},{1.00,-8.0}}'/>
+				<Property Name='UnifiedPosition' Value='{{0.0,4.0},{0.0,4.0}}'/>
+				<Property Name='InheritsAlpha' Value='true'/>
+				<Window Type='DefaultWindow' Name='Textures'>
+					<Property Name='UnifiedSize' Value='{{1.0,0.0},{1.0,0.0}}'/>
+					<Property Name='Text' Value='Textures'/>
+					<Property Name='InheritsAlpha' Value='false'/>
+					<Property Name='Visible' Value='true'/>
+					<Window Type='EmberLook/Editbox' Name='FilterTextures'>
+						<Property Name='UnifiedPosition' Value='{{0,0},{1.0,-50}}'/>
+						<Property Name='UnifiedSize' Value='{{0,75},{0,25}}'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/Button' Name='TexturesRefresh'>
+						<Property Name='UnifiedPosition' Value='{{0,0},{1.0,-20}}'/>
+						<Property Name='UnifiedSize' Value='{{0,75},{0,20}}'/>
+						<Property Name='Text' Value='Refresh'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/Button' Name='TexturesReload'>
+						<Property Name='UnifiedPosition' Value='{{0,75},{1.0,-20}}'/>
+						<Property Name='UnifiedSize' Value='{{0,75},{0,20}}'/>
+						<Property Name='Text' Value='Reload'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/Listbox' Name='TexturesList'>
+						<Property Name='UnifiedPosition' Value='{{0,4},{0,4}}'/>
+						<Property Name='UnifiedSize' Value='{{0,200},{1,-70}}'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/StaticText' Name='TextureInfo'>
+						<Property Name='UnifiedPosition' Value='{{0,205},{0,4}}'/>
+						<Property Name='UnifiedSize' Value='{{1,-210},{1,-70}}'/>
+						<Property Name='Text' Value=''/>
+						<Property Name='InheritsAlpha' Value='True'/>
+						<Property Name='VertFormatting' Value='TopAligned'/>
+						<Property Name='HorzFormatting' Value='WordWrapLeftAligned'/>
+						<Window Type='EmberLook/StaticImage' Name='TextureInfo/Image'>
+							<Property Name='UnifiedPosition' Value='{{0,0},{0,0}}'/>
+							<Property Name='UnifiedSize' Value='{{1,0},{1,0}}'/>
+						</Window>
+					</Window>
+				</Window>
+				<Window Type='DefaultWindow' Name='Materials'>
+					<Property Name='UnifiedSize' Value='{{1.0,0.0},{1.0,0.0}}'/>
+					<Property Name='Text' Value='Materials'/>
+					<Property Name='InheritsAlpha' Value='false'/>
+					<Property Name='Visible' Value='false'/>
+					<Window Type='EmberLook/Editbox' Name='FilterMaterials'>
+						<Property Name='UnifiedPosition' Value='{{0,0},{1.0,-50}}'/>
+						<Property Name='UnifiedSize' Value='{{0,75},{0,25}}'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/Button' Name='MaterialsRefresh'>
+						<Property Name='UnifiedPosition' Value='{{0,0},{1.0,-20}}'/>
+						<Property Name='UnifiedSize' Value='{{0,75},{0,20}}'/>
+						<Property Name='Text' Value='Refresh'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/Button' Name='MaterialsReload'>
+						<Property Name='UnifiedPosition' Value='{{0,75},{1.0,-20}}'/>
+						<Property Name='UnifiedSize' Value='{{0,75},{0,20}}'/>
+						<Property Name='Text' Value='Reload'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/Listbox' Name='MaterialsList'>
+						<Property Name='UnifiedPosition' Value='{{0,4},{0,4}}'/>
+						<Property Name='UnifiedSize' Value='{{0,200},{1,-70}}'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/StaticText' Name='MaterialsInfo'>
+						<Property Name='UnifiedPosition' Value='{{0,205},{0,4}}'/>
+						<Property Name='UnifiedSize' Value='{{1,-210},{1,-70}}'/>
+						<Property Name='Text' Value=''/>
+						<Property Name='InheritsAlpha' Value='True'/>
+						<Property Name='VertFormatting' Value='TopAligned'/>
+						<Property Name='HorzFormatting' Value='WordWrapLeftAligned'/>
+						<Window Type='EmberLook/MultiLineEditbox' Name='MaterialInfo/Text'>
+							<Property Name='UnifiedPosition' Value='{{0,0},{0,0}}'/>
+							<Property Name='UnifiedSize' Value='{{1,0},{1,0}}'/>
+						</Window>
+					</Window>
+				</Window>
+				<Window Type='DefaultWindow' Name='Meshes'>
+					<Property Name='UnifiedSize' Value='{{1.0,0.0},{1.0,0.0}}'/>
+					<Property Name='Text' Value='Meshes'/>
+					<Property Name='InheritsAlpha' Value='false'/>
+					<Property Name='Visible' Value='false'/>
+					<Window Type='EmberLook/Editbox' Name='FilterMeshes'>
+						<Property Name='UnifiedPosition' Value='{{0,0},{1.0,-50}}'/>
+						<Property Name='UnifiedSize' Value='{{0,75},{0,25}}'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/Button' Name='MeshesRefresh'>
+						<Property Name='UnifiedPosition' Value='{{0,0},{1.0,-20}}'/>
+						<Property Name='UnifiedSize' Value='{{0,75},{0,20}}'/>
+						<Property Name='Text' Value='Refresh'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/Listbox' Name='MeshesList'>
+						<Property Name='UnifiedPosition' Value='{{0,4},{0,4}}'/>
+						<Property Name='UnifiedSize' Value='{{0,200},{1,-70}}'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/StaticText' Name='MeshInfo'>
+						<Property Name='UnifiedPosition' Value='{{0,205},{0,4}}'/>
+						<Property Name='UnifiedSize' Value='{{1,-210},{1,-70}}'/>
+						<Property Name='Text' Value=''/>
+						<Property Name='InheritsAlpha' Value='True'/>
+						<Property Name='VertFormatting' Value='TopAligned'/>
+						<Property Name='HorzFormatting' Value='WordWrapLeftAligned'/>
+						<Window Type='EmberLook/StaticImage' Name='MeshInfo/Preview'>
+							<Property Name='UnifiedPosition' Value='{{0,0},{0,0}}'/>
+							<Property Name='UnifiedSize' Value='{{1,0},{1,-30}}'/>
+							<Window Type='EmberLook/StaticText' Name='MeshInfoEdit'>
+								<Property Name='UnifiedPosition' Value='{{0,0},{0,0}}'/>
+								<Property Name='UnifiedSize' Value='{{1,0},{0.5,0}}'/>
+								<Property Name='Text' Value=''/>
+								<Property Name='InheritsAlpha' Value='True'/>
+								<Property Name='VertFormatting' Value='TopAligned'/>
+								<Property Name='HorzFormatting' Value='WordWrapLeftAligned'/>
+								<Property Name='Visible' Value='False'/>
+								<Window Type='EmberLook/Listbox' Name='SubMeshesList'>
+									<Property Name='UnifiedPosition' Value='{{0,0},{0,30}}'/>
+									<Property Name='UnifiedSize' Value='{{0,200},{1,-40}}'/>
+									<Property Name='InheritsAlpha' Value='True'/>
+								</Window>
+								<Window Type='EmberLook/Listbox' Name='SubMeshMaterialsList'>
+									<Property Name='UnifiedPosition' Value='{{0,210},{0,5}}'/>
+									<Property Name='UnifiedSize' Value='{{0,200},{1,-45}}'/>
+									<Property Name='InheritsAlpha' Value='True'/>
+								</Window>
+								<Window Type='EmberLook/Editbox' Name='SubMeshMaterialsFilter'>
+									<Property Name='UnifiedPosition' Value='{{0,210},{1,-35}}'/>
+									<Property Name='UnifiedSize' Value='{{0,150},{0,25}}'/>
+								</Window>								
+								<Window Type='EmberLook/StaticText' Name='MeshSkeletonPathText'>
+									<Property Name='UnifiedPosition' Value='{{0,420},{0,5}}'/>
+									<Property Name='UnifiedSize' Value='{{0,75},{0,25}}'/>
+									<Property Name='FrameEnabled' Value='false' />
+									<Property Name='BackgroundEnabled' Value='false' />
+									<Property Name='Text' Value='Skeleton path:' />
+								</Window>
+								<Window Type='EmberLook/Editbox' Name='MeshSkeletonPath'>
+									<Property Name='UnifiedPosition' Value='{{0,420},{0,30}}'/>
+									<Property Name='UnifiedSize' Value='{{0,200},{0,25}}'/>
+								</Window>	
+                                <Window Type='EmberLook/StaticText' Name='MeshLodLevelText'>
+                                    <Property Name='UnifiedPosition' Value='{{0,420},{0,60}}'/>
+                                    <Property Name='UnifiedSize' Value='{{0,75},{0,25}}'/>
+                                    <Property Name='FrameEnabled' Value='false' />
+                                    <Property Name='BackgroundEnabled' Value='false' />
+                                    <Property Name='Text' Value='Lod level:' />
+                                </Window>
+                                <Window Type='EmberLook/Listbox' Name='MeshLodLevel'>
+                                    <Property Name='UnifiedPosition' Value='{{0,420},{0,90}}'/>
+                                    <Property Name='UnifiedSize' Value='{{0,100},{0,100}}'/>
+                                </Window>   
+								<Window Type='EmberLook/Button' Name='MeshInfoSaveButton'>
+									<Property Name='UnifiedPosition' Value='{{0,55},{0,5}}'/>
+									<Property Name='UnifiedSize' Value='{{0,50},{0,25}}'/>
+									<Property Name='Text' Value='Save'/>
+									<Property Name='InheritsAlpha' Value='True'/>
+									<Property Name='Tooltip' Value='Save the mesh to disk' />
+								</Window>
+							</Window>
+							<Window Type='EmberLook/Button' Name='MeshInfoEditShowButton'>
+								<Property Name='UnifiedPosition' Value='{{0,5},{0,5}}'/>
+								<Property Name='UnifiedSize' Value='{{0,50},{0,25}}'/>
+								<Property Name='Text' Value='Edit'/>
+								<Property Name='InheritsAlpha' Value='True'/>
+								<Property Name='AlwaysOnTop' Value='true'/>
+							</Window>
+						</Window>
+					</Window>
+				</Window>
+				<Window Type='DefaultWindow' Name='Images'>
+					<Property Name='UnifiedSize' Value='{{1.0,0.0},{1.0,0.0}}'/>
+					<Property Name='Text' Value='Images'/>
+					<Property Name='InheritsAlpha' Value='false'/>
+					<Property Name='Visible' Value='false'/>
+					<Window Type='EmberLook/Editbox' Name='FilterImages'>
+						<Property Name='UnifiedPosition' Value='{{0,0},{1.0,-50}}'/>
+						<Property Name='UnifiedSize' Value='{{0,75},{0,25}}'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/Button' Name='ImagesRefresh'>
+						<Property Name='UnifiedPosition' Value='{{0,0},{1.0,-20}}'/>
+						<Property Name='UnifiedSize' Value='{{0,75},{0,20}}'/>
+						<Property Name='Text' Value='Refresh'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/Listbox' Name='ImagesList'>
+						<Property Name='UnifiedPosition' Value='{{0,4},{0,4}}'/>
+						<Property Name='UnifiedSize' Value='{{0,200},{1,-70}}'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/StaticText' Name='ImagesInfo'>
+						<Property Name='UnifiedPosition' Value='{{0,205},{0,4}}'/>
+						<Property Name='UnifiedSize' Value='{{1,-210},{1,-70}}'/>
+						<Property Name='Text' Value=''/>
+						<Property Name='InheritsAlpha' Value='True'/>
+						<Property Name='VertFormatting' Value='TopAligned'/>
+						<Property Name='HorzFormatting' Value='WordWrapLeftAligned'/>
+						<Window Type='EmberLook/StaticImage' Name='ImagesInfo/Image'>
+							<Property Name='UnifiedPosition' Value='{{0,0},{0,0}}'/>
+							<Property Name='UnifiedSize' Value='{{1,0},{1,0}}'/>
+						</Window>
+					</Window>
+				</Window>
+				<Window Type='DefaultWindow' Name='Shaders'>
+					<Property Name='UnifiedSize' Value='{{1.0,0.0},{1.0,0.0}}'/>
+					<Property Name='Text' Value='Shaders'/>
+					<Property Name='InheritsAlpha' Value='false'/>
+					<Property Name='Visible' Value='false'/>
+					<Window Type='EmberLook/Editbox' Name='FilterShaders'>
+						<Property Name='UnifiedPosition' Value='{{0,0},{1.0,-50}}'/>
+						<Property Name='UnifiedSize' Value='{{0,75},{0,25}}'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/Button' Name='RefreshShaders'>
+						<Property Name='UnifiedPosition' Value='{{0,0},{1.0,-20}}'/>
+						<Property Name='UnifiedSize' Value='{{0,75},{0,20}}'/>
+						<Property Name='Text' Value='Refresh'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/Button' Name='ShadersReload'>
+						<Property Name='UnifiedPosition' Value='{{0,75},{1.0,-20}}'/>
+						<Property Name='UnifiedSize' Value='{{0,75},{0,20}}'/>
+						<Property Name='Text' Value='Reload'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/Listbox' Name='ShadersList'>
+						<Property Name='UnifiedPosition' Value='{{0,4},{0,4}}'/>
+						<Property Name='UnifiedSize' Value='{{0,200},{1,-70}}'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+						<Property Name='MultiSelect' Value='True' />
+					</Window>
+					<Window Type='EmberLook/StaticText' Name='ShadersInfo'>
+						<Property Name='UnifiedPosition' Value='{{0,205},{0,4}}'/>
+						<Property Name='UnifiedSize' Value='{{1,-210},{1,-70}}'/>
+						<Property Name='Text' Value=''/>
+						<Property Name='InheritsAlpha' Value='True'/>
+						<Property Name='VertFormatting' Value='TopAligned'/>
+						<Property Name='HorzFormatting' Value='WordWrapLeftAligned'/>
+						<Window Type='EmberLook/MultiLineEditbox' Name='ShadersInfo/Text'>
+							<Property Name='UnifiedPosition' Value='{{0,0},{0,0}}'/>
+							<Property Name='UnifiedSize' Value='{{1,0},{1,0}}'/>
+						</Window>
+					</Window>
+				</Window>
+				<Window Type='DefaultWindow' Name='Windows'>
+					<Property Name='UnifiedSize' Value='{{1.0,0.0},{1.0,0.0}}'/>
+					<Property Name='Text' Value='Windows'/>
+					<Property Name='InheritsAlpha' Value='false'/>
+					<Property Name='Visible' Value='false'/>
+					<Window Type='EmberLook/Editbox' Name='FilterWindows'>
+						<Property Name='UnifiedPosition' Value='{{0,0},{1.0,-50}}'/>
+						<Property Name='UnifiedSize' Value='{{0,75},{0,25}}'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/Button' Name='RefreshWindows'>
+						<Property Name='UnifiedPosition' Value='{{0,0},{1.0,-20}}'/>
+						<Property Name='UnifiedSize' Value='{{0,75},{0,20}}'/>
+						<Property Name='Text' Value='Refresh'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/Listbox' Name='WindowsList'>
+						<Property Name='UnifiedPosition' Value='{{0,4},{0,4}}'/>
+						<Property Name='UnifiedSize' Value='{{0,200},{1,-70}}'/>
+						<Property Name='InheritsAlpha' Value='True'/>
+					</Window>
+					<Window Type='EmberLook/StaticText' Name='WindowInfo'>
+						<Property Name='UnifiedPosition' Value='{{0,205},{0,4}}'/>
+						<Property Name='UnifiedSize' Value='{{1,-210},{1,-70}}'/>
+						<Property Name='Text' Value=''/>
+						<Property Name='InheritsAlpha' Value='True'/>
+						<Property Name='VertFormatting' Value='TopAligned'/>
+						<Property Name='HorzFormatting' Value='WordWrapLeftAligned'/>
+						<Property Name='FrameEnabled' Value='false'/>
+						<Property Name='BackgroundEnabled' Value='false'/>
+						<Window Type='EmberLook/Checkbox' Name='WindowInfo/Visible'>
+							<Property Name='UnifiedPosition' Value='{{0,0},{0,0}}'/>
+							<Property Name='UnifiedSize' Value='{{1,0},{0,25}}'/>
+							<Property Name='Text' Value='Visible'/>
+						</Window>
+						<Window Type='EmberLook/StaticText' Name='WindowInfo/Text'>
+							<Property Name='UnifiedPosition' Value='{{0,0},{0,25}}'/>
+							<Property Name='UnifiedSize' Value='{{1,0},{1,-25}}'/>
+							<Property Name='VertFormatting' Value='TopAligned'/>
+							<Property Name='HorzFormatting' Value='WordWrapLeftAligned'/>
+							<Property Name='FrameEnabled' Value='false'/>
+							<Property Name='BackgroundEnabled' Value='false'/>
+						</Window>
+					</Window>
+				</Window>
+			</Window>
+		</Window>
+	</Window>
+</GUILayout>

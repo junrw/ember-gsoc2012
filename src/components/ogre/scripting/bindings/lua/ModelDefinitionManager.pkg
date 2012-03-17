@@ -1,0 +1,46 @@
+
+namespace Ember {
+namespace OgreView {
+namespace Model {
+/**
+@author Erik Hjortsberg
+*/
+class ModelDefinitionManager : public Ogre::ResourceManager
+{
+public:
+	
+	static ModelDefinitionManager& getSingleton();
+	
+	
+//	const Ember::OgreView::Model::ModelDefinition::AreaDefinition* getAreaDefinition(int layer) const;
+
+	std::string exportScript(Ember::OgreView::Model::ModelDefnPtr definition);
+
+    Ember::OgreView::Model::ModelDefnPtr create(const std::string& name, const std::string& group);
+	Ember::OgreView::Model::ModelDefnPtr getByName(const std::string& name);
+
+	
+	/**
+	 *    Gets a vector of all mesh names.
+	 * @return 
+	 */
+	const std::vector<std::string> getAllMeshes() const;
+	
+	/**
+	 *    Returns whether models should be shown.
+	 * @return 
+	 */
+	bool getShowModels() const;
+	
+	/**
+	 *    Sets whether models should be shown.
+	 * @param show 
+	 */
+	void setShowModels(bool show);
+};
+
+
+}
+}
+}
+

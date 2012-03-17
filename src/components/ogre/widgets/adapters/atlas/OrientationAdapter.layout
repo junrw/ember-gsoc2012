@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GUILayout>
+	<Window Type='DefaultWindow' Name='OrientationAdapter'>
+		<Property Name='UnifiedPosition' Value='{{0,0},{0,0}}'/>
+		<Property Name='UnifiedSize' Value='{{0,200},{0,30}}'/>
+		<Window Type='EmberLook/Editbox' Name='x'>
+			<Property Name='UnifiedPosition' Value='{{0,0},{0,0}}'/>
+			<Property Name='UnifiedSize' Value='{{0,45},{0,25}}'/>
+			<Property Name='Tooltip' Value='X value.' />
+		</Window>
+		<Window Type='EmberLook/Editbox' Name='y'>
+			<Property Name='UnifiedPosition' Value='{{0,50},{0,0}}'/>
+			<Property Name='UnifiedSize' Value='{{0,45},{0,25}}'/>
+			<Property Name='Tooltip' Value='Y value.' />
+		</Window>
+		<Window Type='EmberLook/Editbox' Name='z'>
+			<Property Name='UnifiedPosition' Value='{{0,100},{0,0}}'/>
+			<Property Name='UnifiedSize' Value='{{0,45},{0,25}}'/>
+			<Property Name='Tooltip' Value='Z value.' />
+		</Window>
+		<Window Type='EmberLook/Editbox' Name='scalar'>
+			<Property Name='UnifiedPosition' Value='{{0,150},{0,0}}'/>
+			<Property Name='UnifiedSize' Value='{{0,45},{0,25}}'/>
+			<Property Name='Tooltip' Value='Scalar value.' />
+		</Window>
+	</Window>
+</GUILayout>

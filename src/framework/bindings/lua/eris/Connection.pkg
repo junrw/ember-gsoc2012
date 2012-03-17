@@ -1,0 +1,18 @@
+$#include <Eris/Connection.h>
+
+namespace Eris {
+class Connection : public BaseConnection {
+
+    TypeService* getTypeService() const;
+    
+    void getServerInfo(Eris::ServerInfo&) const;
+    
+    sigc::signal<void> GotServerInfo;
+        
+    /// sent on successful negotiation of a game server connection
+    sigc::signal<void> Connected;
+    
+    /// final disconnect (or hard disocnnect) notifcation
+    sigc::signal<void> Disconnected;
+};
+}

@@ -1,0 +1,46 @@
+namespace Ember {
+namespace OgreView {
+
+	
+class Avatar 
+{
+
+	Ogre::SceneNode* getAvatarSceneNode() const;
+
+	
+	EmberEntity& getEmberEntity();
+	
+	
+	/**
+	 *    sets the minimum interval to wait before sending new rotation changes to the server
+	 *    this is not done instantly to prevent swamping of data to the server
+	 *    set this lower if you experience too jerky game play
+	 * @param milliseconds 
+	 */
+	void setMinIntervalOfRotationChanges(Ogre::Real milliseconds);
+
+	sigc::signal<void, Ember::OgreView::EmberEntity* > EventAddedEntityToInventory;
+	sigc::signal<void, Ember::OgreView::EmberEntity* > EventRemovedEntityFromInventory;
+	
+	/**
+	True if the current user have admin rights, i.e. is a "creator".
+	*/
+	inline bool isAdmin() const;
+	
+	/**
+	 * @brief Gets the client side position of the avatar.
+	 * This can differ from the position of the entity which represents the avatar, since the player can move the avatar before the server receives updates.
+	 * @return The position of the avatar, as the client sees it.
+	 */
+	WFMath::Point<3> getClientSideAvatarPosition() const;
+
+	/**
+	 * @brief Gets the client side orientation of the avatar.
+	 * This can differ from the orientation of the entity which represents the avatar, since the player can move the avatar before the server receives updates.
+	 * @return The orientation of the avatar, as the client sees it.
+	 */
+	WFMath::Quaternion getClientSideAvatarOrientation() const;
+
+};
+}
+}
